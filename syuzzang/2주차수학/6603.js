@@ -20,13 +20,12 @@ function generateLotto(L, pick) {
     answer += `${pick.join(" ")}\n`;
     return;
   }
-  // 로또개수 6개가 모였으면 답안에 더해준다
+  // 길이가 6개만 걸러낸다
   for (let i = L; i < firstNum; i++) {
     generateLotto(i + 1, [...pick, restedNum[i]]);
   }
-  //  for문을 돌려서 답안 배열에 값을 추가해준다
+  //  for문을 돌려서 답안 배열에 값을 추가해준다 L이 0이될때까지 반복됨
+  // 예를들어 L이 5라고 했을때 5~firstnum까지 반복하고 배열 뒤에 들어감
 }
 
 console.log(answer);
-
-// 재귀사용한이유: 알고리즘강의에서 재귀함수를 배웠는데 활용할수있을것 같아서..
