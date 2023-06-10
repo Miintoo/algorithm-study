@@ -7,7 +7,7 @@ dp[0][0] = tri[0][0]
 k = 2
 for i in range(1, n):
     for j in range(k):
-        if i == 0:
+        if j == 0:
             dp[i][j] = dp[i - 1][j] + tri[i][j]
         elif i == j:
             dp[i][j] = dp[i - 1][j - 1] + tri[i][j]
